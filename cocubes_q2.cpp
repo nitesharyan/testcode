@@ -30,4 +30,5 @@ int find_Closet(int arr[],int n,int x,int k)
 			first++;
 		}
 	}
+	return sum;
 }
