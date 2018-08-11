@@ -1,20 +1,25 @@
 #include <stdio.h>
 
-int main() 
+int main(int argc,char *argv[]) 
 {
-	float fNum=3,temp,root;
-	if(fNum==0 || fNum==1)
-		root=fNum;
+	float fNum=atoi(argv[1]),temp,root;
+	if(argc!=2)
+		print("Invalid input!!!!");
 	else
 	{
-		root=fNum/2;
-		temp=0;
-		while(root!=temp)
+		if(fNum==0 || fNum==1)
+			root=fNum;
+		else
 		{
-			temp=root;
-			root=(fNum/temp+temp)/2;
+			root=fNum/2;
+			temp=0;
+			while(root!=temp)
+			{
+				temp=root;
+				root=(fNum/temp+temp)/2;
+			}
 		}
+		printf("%f",root);
 	}
-	printf("%f",root);
 	return 0;
 }
